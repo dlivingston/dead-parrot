@@ -1,5 +1,14 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">The Dead Parrot Project</span>
+    <ul class="navbar-nav flex-row">
+        <li class="nav-item mx-2">
+             {{#link-to "home" class="nav-link"}} Home {{/link-to}}
+        </li>
+        <li class="nav-item mx-2">
+             {{#link-to "posts" class="nav-link"}} Posts {{/link-to}}
+        </li>
+    </ul>
+</nav>
+<div class="container">
+    {{outlet}}
+</div>
