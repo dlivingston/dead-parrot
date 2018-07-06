@@ -1,4 +1,21 @@
-<h2>Posts</h2>
+<h2 class="mt-5">Posts</h2>
+<table class="table table-striped mb-4">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Date Created</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each model as |post|}}  
+            <tr id="{{post.id}}">
+                <td>{{post.title}}</td>
+                <td>{{post.created_at}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+
 {{#link-to "post" class="btn btn-primary"}}
     New Post 
 {{/link-to}}
