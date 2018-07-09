@@ -7,15 +7,19 @@
         </tr>
     </thead>
     <tbody>
-        {{#each model as |post|}}  
+        {{#each model as |post|}}
             <tr id="{{post.id}}">
-                <td>{{post.title}}</td>
+                <td>
+                {{#link-to "post" post.id}}                    
+                    {{post.title}}    
+                {{/link-to}}
+                </td>
                 <td>{{post.created_at}}</td>
             </tr>
         {{/each}}
     </tbody>
 </table>
 
-{{#link-to "post" class="btn btn-primary"}}
+{{!-- {{#link-to "post" class="btn btn-primary"}}
     New Post 
-{{/link-to}}
+{{/link-to}} --}}

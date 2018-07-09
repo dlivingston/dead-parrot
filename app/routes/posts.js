@@ -5,5 +5,7 @@ export default Route.extend({
         return this.get('store').query('post', {
             key: 'don.livingston'
         });
+    },
+    init() {
     }
 });

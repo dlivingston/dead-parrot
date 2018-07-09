@@ -1,0 +1,24 @@
+<form>
+    <fieldset disabled={{editable}}>
+        <div class="form-group">
+            <label for="subject">Subject</label>
+            {{input type="text" value=model.title class="form-control" }}
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            {{textarea class="form-control" value=model.content}}
+        </div>
+        <div class="form-group">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+        </div>
+    </fieldset>
+    <button {{action "toggleEdit"}} class="btn btn-primary">
+    {{#if editable}}Edit {{else}} Cancel {{/if}}
+    </button>
+    {{#unless editable}}
+    <button {{action "updatePost"}} class="btn btn-success">Update Post</button>
+    {{/unless}}
+</form>
